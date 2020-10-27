@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ENG">
+<head>
+    <meta charset="UTF-8">
+    <title>Guestbook</title>
+</head>
+<body>
+<h2>GUESTBOOK</h2>
+<div id="notes">
+    {% for note in notes %}
+        <div class="note">
+        <p>{{ note.name }} date:  {{ note.date }} </p>
+        <p>Wrote:</p>
+        <div class="text">"{{ note.text }}"</div>
+        </div>
+    {% endfor %}
+</div>
+<form method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Message:</label>
+    <textarea name="text"></textarea>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
